@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<div class="logo"><a href="index.html">Kubernetes</a></div>
+			<a href="#menu" class="toggle"><span>Menu</span></a>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		</header>
+
+		<!-- Nav -->
+		<nav id="menu">
+			<ul class="links">
+				<li><a href="#intro">Introdução             </a></li>
+                <li><a href="#def">  Definições             </a></li>
+				<li><a href="#arq">  Arquitetura            </a></li>
+				<li><a href="#vant"> Vantagens              </a></li>
+				<li><a href="#apli"> Aplicações             </a></li>
+				<li><a href="#des">  Desafios e Contrapontos</a></li>
+                <li><a href="#fut">  Futuro do Kubernetes   </a></li>
+				<li><a href="#concl">Conclusão              </a></li>
+				<li><a href="#ref">  Referências            </a></li>
+				<li><a href="#perg"> Perguntas              </a></li>
+			</ul>
+		</nav>
+
+		<section id="banner" data-video="images/banner">
+			<div class="inner">
+				<h1>Kubernetes</h1>
+				<p>Carolina Abdu, Pedro Glaser, Rafaella Lenzi<br/><br/>
+				Redes de Computadores I - 2024.1</br></p>
+					
+				<a href="#intro" class="button special scrolly">Introdução</a>
+			</div>
+		</section>
+
+
+		<section id="intro" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Introdução</h2>
+							</header>
+								<hr />
+
+							<ul class="actions fit small">
+							<li><a href="#def" class="button special fit small scrolly">Definições -></a></li>
+							</ul>
+                            <p>Originalmente desenvolvido no Google e lançado como código aberto em 2014, o Kubernetes é um software de gerenciamento centrado em contêineres, que foi criado com base nos 15 anos de execução de cargas de trabalho em contêiner e nas contribuições valiosas da comunidade do código aberto. Com a ampla adoção dos contêineres entre as organizações, o Kubernetes se tornou o padrão para implantar e operar aplicativos dentro deles.</p>
+                            <p>Inspirado no sistema de gerenciamento de cluster interno do Google, Borg, o Kubernetes automatiza tarefas operacionais de gerenciamento de contêineres e inclui comandos integrados para implantação de aplicativos, implementação de alterações nas aplicações, escalonamento para mais e para menos para atender às necessidades de mudança, monitoramento e muito mais, facilitando todo o gerenciamento.</p> 
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <section id="def" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Definições</h2>
+							</header>
+								<hr />
+
+							<ul class="actions fit small">
+							<li><a href="#arq" class="button special fit small scrolly">Arquitetura -></a></li>
+							</ul>
+                            <p><strong>Contêiner:</strong> CON-TÊI-NER -> "grande caixa de metal ou madeira, geralmente de grandes dimensões, destinado ao acondicionamento e transporte de carga em navios, trens etc". No âmbito da computação, um contêiner é um ambiente isolado que divide um único host de controle e que é responsável por armazenar aplicações. </p>
+                            <p><strong>Cluster:</strong> Um Cluster é nada mais que um conjunto de máquinas, também chamadas de <strong>nós</strong>, que são utilizadas em conjunto.</p>
+                            <p><strong>Pods:</strong> Um Pod é a menor unidade de trabalho do Kubernetes, pode ser composto por um ou mais contêineres desde que compartilhem o mesmo volume e namespace. Também pode ser reconhecido como uma instância de processo rodando no cluster. Um detalhe importante é que são efêmeros, uma vez que são direcionados para a realização de uma tarefa específica quando criados.</p>
+                            <p><strong>Services:</strong> Services, ou serviços, são abstrações que definem um conjunto lógico de Pods e uma política para acessá-los. Diferentes dos Pods, não são efêmeros. Aqui estão alguns tipos de Services:</p>
+                            <ul>
+                                <li>ClusterIP -> Serviço responsável por criar um endereço IP que permite a comunicação entre os Pods, sendo ele acessível apenas dentro de um cluster;</li>
+                                <li>NodePort -> Serviço responsável por mapear os nós, através de portas, dentro de um cluster para acesso de agentes externos; </li>
+                                <li>LoadBalancer -> Serviço responsével por dividir as cargas de processos entre diferentes nós, permitindo que um sistema, site ou aplicação continue em funcionamento mesmo com o aumento da demanda;</li>
+                                <li>ExternalName -> Serviço responsável por mapear nomes DNS do cluster para nomes DNS externos, permitindo que Pods acessem serviços fora do cluster. </li>
+                            </ul>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="arq" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Arquitetura</h2>
+							</header>
+							<hr />
+																
+							<ul class="actions fit small">
+							<li><a href="#vant" class="button special fit small scrolly">Vantagens -></a></li>
+							</ul>
+                            <h3 align="center">Control Plane</br></h3>
+                            <p align="center">Tomam decisões globais sobre o cluster, detectam e respondem aos eventos do cluster.</br></p>
+                            <p><strong>Kube-apiserver:</strong> É o núcleo do Kubernetes. Ele desempenha um papel fundamental ao gerenciar a gravação no banco de dados, garantindo a validação e configuração adequadas dos dados para os objetos da API, como pods, serviços e controladores de replicação. Além disso, ele facilita o balanceamento de carga e tráfego entre as instâncias, fornecendo uma interface centralizada para o cluster que permite a interação entre todos os componentes do sistema.
+                            </p>
+                            <p><strong>Kube-scheduler:</strong> É encarregado de distribuir os pods nos nós para execução. Ele leva em consideração as especificações de afinidade e anti-afinidade, além de analisar fatores como interferências de cargas de trabalho, prazos e outros critérios. Esse processo permite identificar o nó mais adequado para alocar o container, levando em conta a disponibilidade e otimizando os recursos. Suas decisões são baseadas em requisitos individuais e coletivos de recursos, restrições de hardware e software, políticas, afinidades e anti-afinidades, localização de dados, interferências entre cargas de trabalho e prazos.</p>
+                            <p><strong>ETCD:</strong> É o tipo de armazenamento. Responsável pelo armazenamento de dados relacionados ao cluster. É um aramá e ameno do tipo chave valor consistente e de alta disponibilidade, usado como armazenamento de apoio do kubernetes. </p>
+                            <p><strong>Kube-controller-manager:</strong> Executa os processos do controlador. Apesar de cada controlador estar em um processo separado, eles são complicados e executam em um único processo. Controladores: de nó, de jobs, de endpointslice, service account.</p>
+                            <p><strong>Cloud-controller-manager:</strong> Executa os controladores kubernets que estão na nuvem. É possível gerenciar o controle da nuvem, escalonando horizontalmente e garantindo a interação com o cluster. É possível gerenciar os nós. Permite vincular o cluster na API do seu provedor de nuvem e separar os componentes que apenas interagem com seu cluster. Executa apenas controladores que são específicos para seu provedor de nuvem. Controladores: de nó, de rota, de serviço. </p>
+                            <hr/>
+                            <h3 align="center">Node Components</br></h3>
+                            <p align="center">Componentes são executados em todos os nós, mantendo os pods em execução e fornecendo o ambiente de execução do kubernetes. </br></p>
+                            <p><strong>Kubelet:</strong> É um dos componentes cruciais dos nós em um cluster Kubernetes. Ele garante a execução eficiente de todos os containers atribuídos a um pod específico. No entanto, vale ressaltar que o Kubelet não gerencia containers que não foram criados pelo próprio Kubernetes, concentrando-se exclusivamente na gestão e supervisão dos containers que fazem parte da estrutura Kubernetes.</p>
+                            <p><strong>Kube-proxy:</strong> É um proxy de rede que opera em cada nó do cluster Kubernetes. Ele desempenha um papel fundamental na implementação do conceito de serviço dentro do Kubernetes, gerenciando e mantendo regras de rede nos nós. Essas regras permitem que os pods se comuniquem eficientemente com sessões de rede dentro ou fora do cluster. Além disso, o Kube-proxy aproveita a camada de filtragem de pacotes do sistema operacional, se disponível, para otimizar a conectividade de rede e garantir uma comunicação confiável entre os componentes do cluster.</p>
+                            <hr/>
+                            <h3 align="center">Security</br></h3>
+                            <p align="center">Estratégia de segurança adotada pelo Kubernetes</br></p>
+                            <p><strong></strong> </p>
+                            <p><strong></strong> </p>
+                            <hr/>
+                            <h3 align="center">Networking</br></h3>
+                            <p align="center">Modelos de comunicação entre unidades do Kubernetes.</br></p>
+                            <p><strong>Container-to-Container:</strong> Comunicação entre contêineres, é necessário que possuam um mesmo namespace - endereço de ambiente isolado dentro de um determinado cluster - e que compartilhem um IP comum.</p>
+                            <p><strong>Pod-to-Pod:</strong> Comunicação entre Pods, o próprio nome já diz. Um detalhe importante é que, como Pods são efêmeros, é alocado um único ClusterIP para estender essa “vida útil”</p>
+                            <p><strong>Pod-to-Service:</strong> Comunicação entre Pod e Serviço. Existe para além do tempo de vida do POD, é gerenciado pelo kube-proxy e também usa um único ClusterIP</p>
+                            <p><strong>External-to-Service:</strong> Comunicação externa ao cluster, é feita através de um LoadBalancer. </p>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="vant" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Vantagens</h2>
+							</header>
+							<hr />
+							
+							<ul class="actions fit small">
+							<li><a href="#apli" class="button special fit small scrolly">Aplicações -></a></li>
+							</ul>
+
+							<h3 align="center">Orquestração</h3>
+
+							<p>Uma das principais vantagens dos Kubernetes é a capacidade de orquestrar e gerenciar o armazenamento de forma flexível. Os usuários podem definir estratégias de armazenamento tanto localmente quanto em ambientes multi-cloud, permitindo uma abordagem adaptável às necessidades de armazenamento dos aplicativos.</p>
+                            </br>
+							<hr />
+							<h3 align="center">Otimização dos Recursos</h3>
+							
+							<p>Os Kubernetes possibilitam uma otimização eficiente dos recursos de computação. Os clusters de nós são aproveitados para executar tarefas nos containers de maneira inteligente, atribuindo recursos de memória conforme a demanda, garantindo assim uma utilização mais eficaz e escalável dos recursos disponíveis.</p>
+                            </br>
+							<hr />
+							<h3 align="center">Autocorreção</h3>
+							<p>Uma das funcionalidades poderosas dos Kubernetes é sua capacidade de autocorreção em casos de falhas. Se um container apresentar problemas, a ferramenta automaticamente reinicia o container afetado e, em caso de erros mais graves, substitui o container por uma nova instância funcional, garantindo a continuidade das operações.</p>
+							</br>
+							<hr/>
+							<h3 align="center">Automatização</h3>
+
+							<p>Os Kubernetes oferecem recursos avançados de automatização. É possível programar a criação automática de containers de acordo com as configurações estabelecidas. Além disso, a plataforma permite a eliminação automática de containers obsoletos e a concentração de recursos em novos containers conforme necessário, simplificando a administração e garantindo uma operação eficiente do ambiente.</p>
+                            </br>
+                            <hr/>
+                            <h3 align="center">Segurança da Informação</h3>
+
+							<p>Os Kubernetes fornecem recursos robustos para garantir a segurança da informação. É possível armazenar e gerenciar informações sigilosas de forma segura, utilizando medidas como senhas, tokens e chaves de criptografia. Isso garante a integridade e a confidencialidade dos dados, mantendo um ambiente seguro para as operações do sistema.</p>
+						</div>
+
+					</div>	
+				</div>
+			</div>
+		</section>
+
+
+		<section id="apli" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Aplicações</h2>
+							</header>
+							<hr />
+							
+							<ul class="actions fit small">
+							<li><a href="#des" class="button special fit small scrolly">Desafios e Contrapontos -></a></li>
+							</ul>
+
+							<h3 align="center">Docker vs. Kubernetes</h3>
+                            <p>Embora muitas vezes interpretados como uma escolha entre um ou outro, o Kubernetes e o Docker são tecnologias diferentes, mas complementares para executar aplicativos em contêineres.</p>
+							<p>O Docker permite que você coloque tudo o que você precisa para executar seu aplicativo em uma caixa que pode ser armazenada e aberta quando e onde for necessário. Depois de começar a encaixotar seus aplicativos, você precisa encontrar uma maneira de gerenciá-los; e é isso que o Kubernetes faz. O próprio nome "Kubernetes" é uma palavra grega que significa "capitão", o que condiz com suas funcionalidades, uma vez que, assim como um capitão, que é responsável pela jornada segura do navio nos mares, o Kubernetes é o responsável por transportar e entregar essas caixas com segurança para os locais onde possam ser usadas.</p>
+                            <ul>
+                                <li>O Kubernetes pode ser usado com ou sem o Docker</li>
+                                <li>O Docker não é uma alternativa ao Kubernetes, portanto, não é uma questão de “Kubernetes vs. Docker”. Trata-se de usar o Kubernetes com o Docker para armazenar seus aplicativos em contêineres e executá-los em escala</li>
+                                <li>A diferença entre o Docker e o Kubernetes está relacionada ao papel que cada um desempenha no armazenamento em contêiner e na execução de seus aplicativos</li>
+                                <li>O Docker é um padrão aberto do setor para empacotar e distribuir aplicativos em contêineres</li>
+                                <li>O Kubernetes usa o Docker para implantar, gerenciar e escalonar aplicativos em contêineres</li>
+                            </ul>
+                            </br>
+                            <img src="images/kvsd.jpg" class="center";>
+							</br>
+                            <p align="center"><i>Docker vs. Kubernetes</p>
+							</br>
+							<hr/>
+							<h3 align="center">Kubernetes na Engenharia de Dados</h3>
+							<p>Sabemos que o Kubernetes é um ótimo serviço de gerenciamento de containers. Por isso, essa ferramenta se torna útil em diferentes aplicações. Na Engenharia de Dados, área que trabalha com problemas complexos em que muitas das vezes precisamos ter uma alta escalabilidade e gerenciamento, o Kubernetes se torna uma excelente opção.</p>
+                            <p>Na Engenharia de Dados, temos o Apache Airflow que é uma ferramenta muito útil para orquestração de fluxos de dados. Podemos utilizar o Airflow de uma maneira bastante manual, mas com o Kubernetes facilitamos muitos dos processos utilizando recursos que diminuem grande parte da carga de trabalho. Ao executá-lo dentro de um cluster, é possível utilizar os recursos de escalabilidade que o Kubernetes fornece.</p>
+							<img src="images/ApacheXKub.png" class="center";>
+							</br>
+							<p align="center"><i>Esquema mostrando a combinação do Apache Airflow com Kubernetes.</p>
+							</br>
+
+							<hr/>
+							<h3 align="center">CERN - Organização Europeia para a Pesquisa Nuclear </h3>
+							<p>CERN utiliza Kubernetes para gerenciar a infraestrutura necessária para a pesquisa científica, incluindo a análise de grandes volumes de dados dos experimentos no Grande Colisor de Hádrons (LHC). Aqui estão os principais benefícios que Kubernetes proporciona ao CERN:</p>
+							<p><strong>Gerenciamento de Recursos Computacionais:</strong> Kubernetes distribui eficientemente cargas de trabalho computacionais em clusters, maximizando a utilização de recursos e permitindo a análise de grandes volumes de dados.</p>
+							<p><strong>Escalabilidade Flexível:</strong> Kubernetes permite ao CERN escalar recursos rapidamente conforme necessário para suportar picos de demanda durante experimentos intensivos.</p>
+							<p><strong>Infraestrutura Híbrida:</strong> Kubernetes facilita a integração de recursos locais com a nuvem, criando um ambiente híbrido que oferece flexibilidade e otimização de custos.</p>
+                            <p><strong>Automação de Tarefas Operacionais:</strong> Kubernetes automatiza muitas tarefas operacionais, como a implementação, o monitoramento e a manutenção dos aplicativos, liberando os cientistas de TI para se concentrar em tarefas mais críticas.</p>
+                            <p><strong>Isolamento e Segurança:</strong> Kubernetes permite a execução de aplicações em ambientes isolados (namespaces e pods), garantindo que os experimentos científicos sejam realizados de maneira segura e eficiente.</p>
+
+							<img src="images/lhc-atlas.webp" class="center";>
+							</br>
+							<p align="center"><i>LHC - Colisor de Partículas do CERN</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="des" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Desafios e Contrapontos</h2>
+							</header>
+							<hr />
+							
+							<ul class="actions fit small">
+							<li><a href="#fut" class="button special fit small scrolly">Futuro do Kubernetes -></a></li>
+							</ul>
+
+							<h3 align="center">Complexidade</h3>
+							<p><strong>Curva de Aprendizado Íngreme:</strong> Kubernetes é uma tecnologia complexa que pode ser difícil de aprender e dominar. A configuração e o gerenciamento de clusters de Kubernetes requerem um bom entendimento de conceitos avançados de rede, segurança e infraestrutura.</p>
+							<p><strong>Gestão Operacional:</strong> A operação de um cluster de Kubernetes pode ser desafiadora, especialmente em termos de monitoramento, manutenção e troubleshooting. O gerenciamento eficaz de recursos, pods, serviços e nós exige um conhecimento aprofundado e ferramentas de monitoramento robustas.</p>
+							</br>
+							<hr />
+
+							<h3 align="center">Custo</h3>
+							<p>Kubernetes pode aumentar os custos operacionais devido à necessidade de mais recursos computacionais para executar os componentes de orquestração. Além disso, o gerenciamento e a manutenção de clusters de Kubernetes podem exigir equipes especializadas, o que pode aumentar os custos de mão-de-obra. A complexidade da infraestrutura necessária para Kubernetes pode resultar em custos adicionais, especialmente se for necessário provisionar recursos de nuvem ou hardware adicional para garantir alta disponibilidade e resiliência.</p>
+							</br>
+							<hr />
+
+							<h3 align="center">Sobrecarga de Recursos</h3>
+							<p><strong>Consumo de Recursos:</strong> Kubernetes pode introduzir uma sobrecarga significativa de recursos, já que cada nó de um cluster precisa rodar vários componentes do sistema (como kubelet, kube-proxy, etc.). Isso pode levar a um consumo adicional de CPU, memória e rede.</p>
+							<p><strong>Eficiência Subótima:</strong> Em ambientes menores ou com cargas de trabalho menos intensivas, a sobrecarga operacional de Kubernetes pode não justificar os benefícios, resultando em eficiência subótima.</p>
+							</br>
+							<hr />
+
+							<h3 align="center">Segurança</h3>
+							<p> A segurança em Kubernetes é complexa e requer a configuração correta de políticas de rede, controle de acesso baseado em função (RBAC), e gerenciamento de secrets. Uma configuração incorreta pode expor a infraestrutura a riscos de segurança. A adição de vários componentes e camadas na infraestrutura aumenta a superfície de ataque, exigindo monitoramento e gestão contínuos para manter a segurança.</p>
+                            </br>
+                            <hr />
+
+							<h3 align="center">Manutenção</h3>
+							<p><strong>Manutenção Contínua:</strong> Manter Kubernetes atualizado com as últimas versões e patches de segurança é crucial, mas pode ser desafiador e requer planejamento cuidadoso para evitar downtime e problemas de compatibilidade.</p>
+                            <p><strong>Atualizações de Cluster:</strong> Atualizar um cluster de Kubernetes pode ser um processo complicado, especialmente em ambientes de produção, onde a interrupção mínima é crítica.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="fut" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Futuro do Kubernetes</h2>
+							</header>
+							<hr />
+																
+							<ul class="actions fit small">
+							<li><a href="#concl" class="button special fit small scrolly">Conclusão -></a></li>
+							</ul>
+                            <p align="center">"O futuro do Kubernetes parece promissor, com várias tendências emergentes".</br></p>
+                            <p><strong>Edge Computing:</strong> Kubernetes está sendo adaptado para rodar em dispositivos de borda, permitindo a orquestração de contêineres em locais remotos e em dispositivos IoT.
+                            </p>
+                            <p><strong>IA e Machine Learning:</strong> A integração de Kubernetes com frameworks de IA e ML está facilitando o treinamento e a implantação de modelos de aprendizado de máquina.</p>
+                            <p><strong>Inovações em Segurança:</strong> Com o passar do tempo, continuarão a surgir novas práticas e ferramentas para melhorar a segurança dos clusters Kubernetes. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="concl" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Conclusão</h2>
+							</header>
+							<hr />
+							
+							<ul class="actions fit small">
+							<li><a href="#ref" class="button special fit small scrolly">Referências -></a></li>
+							</ul>
+
+                            <p>Em resumo, Kubernetes é uma ferramenta poderosa para orquestração de contêineres que oferece uma série de benefícios, como escalabilidade, automação, segurança e eficiência operacional. No entanto, sua complexidade e custo podem representar desafios significativos para as organizações que desejam adotar a tecnologia. É importante avaliar cuidadosamente os requisitos e considerar os prós e contras antes de implementar Kubernetes em um ambiente de produção.</p>
+                            <p>Em última análise, Kubernetes é uma ferramenta valiosa para gerenciar e escalar aplicativos em contêineres, mas requer um investimento significativo em termos de tempo, recursos e expertise para garantir uma implementação bem-sucedida. Com o planejamento adequado e a compreensão dos desafios envolvidos, as organizações podem aproveitar ao máximo os benefícios do Kubernetes e transformar sua infraestrutura de TI para atender às demandas de um mundo cada vez mais digital e orientado por dados.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<section id="ref" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Referências</h2>
+							</header>
+							<hr />
+
+							<ul class="actions fit small">
+							<li><a href="#perg" class="button special fit small scrolly">Perguntas -></a></li>
+							</ul>
+
+							<p><b>[1] <a href="https://cloud.google.com/kubernetes-engine?utm_source=google&utm_medium=cpc&utm_campaign=latam-BR-all-pt-dr-BKWS-all-all-trial-e-dr-1707800-LUAC0016140&utm_content=text-ad-none-any-DEV_c-CRE_542427311450-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt_Containers-Kubernetes-KWID_43700071228559692-kwd-335784956140&utm_term=KW_kubernetes+google-ST_kubernetes+google&gad_source=1&gclid=CjwKCAjw26KxBhBDEiwAu6KXt-yVRlJnSs9QA9RYLcJs2ECdGTuD-79X_iaMzByim81cbPpsgRkckxoCrtAQAvD_BwE&gclsrc=aw.ds">Google Cloud </a></b></p>
+                            <p><b>[2] <a href="http://ww25.kubernets.io/?subid1=20240507-0323-15d8-9d82-69ef5b495ac6">Kubernetes </a></b></p>
+                            <p><b>[3] <a href="https://rockcontent.com/br/blog/kubernetes/">rockcontent </a></b></p>
+                            <p><b>[4] <a href="https://www.redhat.com/pt-br/topics/containers/what-is-kubernetes">redhat </a></b></p>
+                            <p><b>[5] <a href="https://www.ibm.com/topics/kubernetes">IBM </a></b></p>
+                            <p><b>[6] <a href="https://www.alura.com.br/artigos/kubernetes-conhecendo-orquestracao-containers">Alura </a></b></p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="perg" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Perguntas</h2>
+							</header>
+							<hr />
+
+						
+							<button class="button alt fit small" onclick="myFunction1()" >Mostrar respostas</button>
+
+							<hr />
+
+							<p><b> 1) O que é Kubernetes e qual é o seu propósito principal?</b></p>
+
+
+							
+
+							<div id="myDIV1" style="display: none">
+							<p><i>Kubernetes é uma plataforma de código aberto desenvolvida pelo Google para automatizar a implantação, o dimensionamento e o gerenciamento de aplicativos contidos em contêineres. Seu propósito principal é simplificar e automatizar o processo de implantação, escalonamento e operação de aplicativos em contêineres, permitindo que os desenvolvedores se concentrem mais no desenvolvimento de aplicativos e menos na infraestrutura subjacente.</i></p>
+							</div>
+
+							<hr />
+
+							<p><b> 2) O que é um serviço no contexto do Kubernetes e por que é necessário?</b></p>
+
+							
+							<div id="myDIV2" style="display: none">
+							<p><i>Um serviço no contexto do Kubernetes é uma abstração que define um conjunto lógico de pods e uma política de acesso a eles. Ele permite que as aplicações se comuniquem entre si de forma confiável, independentemente da sua localização dentro do cluster.</i></p>
+							</div>
+							<hr />
+
+							<p><b> 3) Como o Kubernetes lida com o balanceamento de carga?</b></p>
+
+
+							
+
+							<div id="myDIV3" style="display: none">
+							<p><i>O Kubernetes lida com o balanceamento de carga distribuindo automaticamente o tráfego de rede entre os pods que fazem parte de um serviço. Isso é feito usando serviços e ingressos para rotear o tráfego para os pods corretos com base em regras de balanceamento de carga configuradas.</i></p>
+							</div>
+
+							<hr />
+
+
+							<p><b> 4) Quais são as diferenças entre Kubernetes e Docker?</b></p>
+
+
+							
+
+							<div id="myDIV4" style="display: none">
+							<p><i>Kubernetes e Docker são tecnologias complementares. Docker é uma plataforma para desenvolvimento, envio e execução de aplicativos em contêineres, enquanto Kubernetes é uma plataforma de orquestração de contêineres que automatiza o dimensionamento, o gerenciamento e a implantação de aplicativos contidos em contêineres.</i></p>
+							</div>
+
+							<hr />
+
+
+							<p><b> 5) Como o Kubernetes ajuda na escalabilidade das aplicações?</b></p>
+
+
+							
+
+							<div id="myDIV5" style="display: none">
+							<p><i>O Kubernetes ajuda na escalabilidade das aplicações fornecendo recursos para dimensionar horizontalmente os pods em resposta ao aumento ou diminuição da carga de trabalho. Isso é feito automaticamente com base em métricas de uso, como CPU ou memória.</i></p>
+							</div></br></br>
+
+							<ul class="actions fit small">
+							<li><a href="#banner" class="button special fit small scrolly">Voltar ao Início <-</a></li>
+							</ul>
+
+
+							<script>
+							function myFunction1() {
+							  var a = document.getElementById("myDIV1");
+							  var b = document.getElementById("myDIV2");
+							  var c = document.getElementById("myDIV3");
+							  var d = document.getElementById("myDIV4");
+							  var e = document.getElementById("myDIV5");
+							  if (a.style.display === "none") {
+							    a.style.display = "block";
+							    b.style.display = "block";
+							    c.style.display = "block";
+							    d.style.display = "block";
+							    e.style.display = "block";
+							  } else {
+							    a.style.display = "none";
+							    b.style.display = "none";
+							    c.style.display = "none";
+							    d.style.display = "none";
+							    e.style.display = "none";
+							  }
+							}
+							</script>
+
+
+						</div>	
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<!-- Footer -->
+		<footer id="footer" class="wrapper">
+			<hr class="new">
+			<p align="center"><b>Carolina Franck Abdu - Pedro Glaser de Senna - Rafaella Lenzi</b></p>
+
+		</footer>
+
+		<!-- Scripts -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.scrollex.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>
