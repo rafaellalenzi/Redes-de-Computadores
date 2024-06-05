@@ -57,6 +57,11 @@
 							</ul>
                             <p>Originalmente desenvolvido no Google e lançado como código aberto em 2014, o Kubernetes é um software de gerenciamento centrado em contêineres, que foi criado com base nos 15 anos de execução de cargas de trabalho em contêiner e nas contribuições valiosas da comunidade do código aberto. Com a ampla adoção dos contêineres entre as organizações, o Kubernetes se tornou o padrão para implantar e operar aplicativos dentro deles.</p>
                             <p>Inspirado no sistema de gerenciamento de cluster interno do Google, Borg, o Kubernetes automatiza tarefas operacionais de gerenciamento de contêineres e inclui comandos integrados para implantação de aplicativos, implementação de alterações nas aplicações, escalonamento para mais e para menos para atender às necessidades de mudança, monitoramento e muito mais, facilitando todo o gerenciamento.</p> 
+							</br>
+							<img src="images/kubernetes.png" class="center">
+							</br>
+							<p align="center"><i>Ícone que representa o software Kubernetes.</p>
+							</br>
                         </div>
 					</div>
 				</div>
@@ -77,8 +82,18 @@
 							<li><a href="#arq" class="button special fit small scrolly">Arquitetura -></a></li>
 							</ul>
                             <p><strong>Contêiner:</strong> CON-TÊI-NER -> "grande caixa de metal ou madeira, geralmente de grandes dimensões, destinado ao acondicionamento e transporte de carga em navios, trens etc". No âmbito da computação, um contêiner é um ambiente isolado que divide um único host de controle e que é responsável por armazenar aplicações. </p>
+							</br>
+							<img src="images/kubernetes-conhecendo-orquestracao-containers.webp" class="center">
+							</br>
+							<p align="center"><i>Representação de contêineres em Kubernetes</p>
+							</br>
                             <p><strong>Cluster:</strong> Um Cluster é nada mais que um conjunto de máquinas, também chamadas de <strong>nós</strong>, que são utilizadas em conjunto.</p>
                             <p><strong>Pods:</strong> Um Pod é a menor unidade de trabalho do Kubernetes, pode ser composto por um ou mais contêineres desde que compartilhem o mesmo volume e namespace. Também pode ser reconhecido como uma instância de processo rodando no cluster. Um detalhe importante é que são efêmeros, uma vez que são direcionados para a realização de uma tarefa específica quando criados.</p>
+							</br>
+							<img src="images/module_03_nodes.svg" class="center">
+							</br>
+							<p align="center"><i>Representação de Pods em Kubernetes</p>
+							</br>
                             <p><strong>Services:</strong> Services, ou serviços, são abstrações que definem um conjunto lógico de Pods e uma política para acessá-los. Diferentes dos Pods, não são efêmeros. Aqui estão alguns tipos de Services:</p>
                             <ul>
                                 <li>ClusterIP -> Serviço responsável por criar um endereço IP que permite a comunicação entre os Pods, sendo ele acessível apenas dentro de um cluster;</li>
@@ -86,7 +101,12 @@
                                 <li>LoadBalancer -> Serviço responsével por dividir as cargas de processos entre diferentes nós, permitindo que um sistema, site ou aplicação continue em funcionamento mesmo com o aumento da demanda;</li>
                                 <li>ExternalName -> Serviço responsável por mapear nomes DNS do cluster para nomes DNS externos, permitindo que Pods acessem serviços fora do cluster. </li>
                             </ul>
-                        </div>
+							</br>
+							<img src="images/Services-in-Kubernetes3.webp" class="center">
+							</br>
+							<p align="center"><i>Representação de Serviços em Kubernetes</p>
+							</br>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -121,7 +141,7 @@
                             <hr/>
                             <h3 align="center">Security</br></h3>
                             <p align="center">Estratégia de segurança adotada pelo Kubernetes</br></p>
-                            <p><strong>Proteção do plano de contole: </strong> Um mecanismo de segurança essencial para qualquer cluster Kubernetes é controlar o acesso à API do Kubernetes. É esperado que você configure e use TLS para fornecer criptografia de dados em trânsito dentro do plano de controle e entre o plano de controle e seus clientes. Também é possível habilitar a criptografia em repouso para os dados armazenados dentro do plano de controle do Kubernetes. </p>
+                            <p><strong>Proteção do plano de controle: </strong> Uma prática imprescindível para qualquer cluster Kubernetes é controlar o acesso à API. É esperado que você configure e use TLS para fornecer criptografia de dados em trânsito dentro do plano de controle e entre o plano de controle e seus clientes. Também é possível habilitar a criptografia em repouso para os dados armazenados dentro do plano de controle do Kubernetes. </p>
                             <p><strong>Secrets: </strong> A API Secret oferece proteção básica para valores de configuração que exigem confidencialidade.</p>
 			    			<p><strong>Proteção de Workloads: </strong> Padrões de segurança de Pods devem ser aplicados para garantir que os Pods e seus containers estejam adequadamente isolados. Classes de Runtime podem ser usadas para definir isolamento personalizado, se necessário. Políticas de rede permitem controlar o tráfego entre Pods ou entre Pods e a rede externa ao cluster.</p>
 			    			<p><strong>Auditoria: </strong>O registro de auditoria do Kubernetes documenta a sequência de ações em um cluster, registrando atividades de usuários, aplicativos que utilizam a API do Kubernetes e do próprio plano de controle. Políticas de segurança podem ser definidas usando mecanismos nativos do Kubernetes, como NetworkPolicy e ValidatingAdmissionPolicy. Além disso, é possível utilizar implementações de políticas do ecossistema mais amplo, que oferecem mecanismos de extensão para controles de revisão de código-fonte, aprovação de imagens de containers, controle de acesso à API e rede, entre outros.</p>
@@ -302,6 +322,11 @@
                             </p>
                             <p><strong>IA e Machine Learning:</strong> A integração de Kubernetes com frameworks de IA e ML está facilitando o treinamento e a implantação de modelos de aprendizado de máquina.</p>
                             <p><strong>Inovações em Segurança:</strong> Com o passar do tempo, continuarão a surgir novas práticas e ferramentas para melhorar a segurança dos clusters Kubernetes. </p>
+							</br>
+							<img src="images/futuro.png" class="center">
+							</br>
+							<p align="center"><i>Cloud Computing em dispositivos de borda.</p>
+							</br>
 						</div>
 					</div>
 				</div>
@@ -369,8 +394,8 @@
 							<header class="align-center">
 								<h2>Perguntas</h2>
 							</header>
+							<img src="images/Perguntas.png" class="center">
 							<hr />
-
 						
 							<button class="button alt fit small" onclick="myFunction1()" >Mostrar respostas</button>
 
