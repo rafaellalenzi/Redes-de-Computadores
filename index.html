@@ -10,7 +10,7 @@
 
 		<!-- Header -->
 		<header id="header" class="alt">
-			<div class="logo"><a href="index.html">Kubernetes</a></div>
+			<div class="logo"><a href="index.html">NFVs - Network Functions Virtualization</a></div>
 			<a href="#menu" class="toggle"><span>Menu</span></a>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		</header>
@@ -19,12 +19,12 @@
 		<nav id="menu">
 			<ul class="links">
 				<li><a href="#intro">Introdução             </a></li>
-                <li><a href="#def">  Definições             </a></li>
 				<li><a href="#arq">  Arquitetura            </a></li>
 				<li><a href="#vant"> Vantagens              </a></li>
 				<li><a href="#apli"> Aplicações             </a></li>
 				<li><a href="#des">  Desafios e Contrapontos</a></li>
-                <li><a href="#fut">  Futuro do Kubernetes   </a></li>
+				<li><a href="#tec">  Tecnologias Relacionadas</a></li>
+                <li><a href="#fut"> Tendências para o Futuro das NFVs</a></li>
 				<li><a href="#concl">Conclusão              </a></li>
 				<li><a href="#ref">  Referências            </a></li>
 				<li><a href="#perg"> Perguntas              </a></li>
@@ -33,9 +33,9 @@
 
 		<section id="banner" data-video="images/banner">
 			<div class="inner">
-				<h1>Kubernetes</h1>
+				<h1>Network Functions Virtualization</h1>
 				<p>Carolina Abdu, Pedro Glaser, Rafaella Lenzi<br/><br/>
-				Redes de Computadores I - 2024.1</br></p>
+				Redes de Computadores II - 2024.2</br></p>
 					
 				<a href="#intro" class="button special scrolly">Introdução</a>
 			</div>
@@ -53,60 +53,19 @@
 								<hr />
 
 							<ul class="actions fit small">
-							<li><a href="#def" class="button special fit small scrolly">Definições -></a></li>
-							</ul>
-                            <p>Originalmente desenvolvido no Google e lançado como código aberto em 2014, o Kubernetes é um software de gerenciamento centrado em contêineres, que foi criado com base nos 15 anos de execução de cargas de trabalho em contêiner e nas contribuições valiosas da comunidade do código aberto. Com a ampla adoção dos contêineres entre as organizações, o Kubernetes se tornou o padrão para implantar e operar aplicativos dentro deles.</p>
-                            <p>Inspirado no sistema de gerenciamento de cluster interno do Google, Borg, o Kubernetes automatiza tarefas operacionais de gerenciamento de contêineres e inclui comandos integrados para implantação de aplicativos, implementação de alterações nas aplicações, escalonamento para mais e para menos para atender às necessidades de mudança, monitoramento e muito mais, facilitando todo o gerenciamento.</p> 
-							</br>
-							<img src="images/kubernetes.png" class="center">
-							</br>
-							<p align="center"><i>Ícone que representa o software Kubernetes.</p>
-							</br>
-                        </div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-        <section id="def" class="wrapper style2">
-			<div class="inner">
-				<div>
-					<div class="box">
-						<div class="content">
-							<header class="align-center">
-								<h2>Definições</h2>
-							</header>
-								<hr />
-
-							<ul class="actions fit small">
 							<li><a href="#arq" class="button special fit small scrolly">Arquitetura -></a></li>
 							</ul>
-                            <p><strong>Contêiner:</strong> CON-TÊI-NER -> "grande caixa de metal ou madeira, geralmente de grandes dimensões, destinado ao acondicionamento e transporte de carga em navios, trens etc". No âmbito da computação, um contêiner é um ambiente isolado que divide um único host de controle e que é responsável por armazenar aplicações. </p>
+							<p>Uma das grandes dificuldades das operadoras de telecomunicações tem sido sua dependência de hardware proprietário para o provisionamento de serviços. O custo destes dispositivos, a logística necessária para sua instalação, espaço, energia e pessoal especializado para o desenvolvimento, integração e operação desses equipamentos, tornam o lançamento de um novo serviço algo extremamente complicado por parte das operadoras, limitando sua capacidade de acompanhar o avanço da tecnologia, que encurta significativamente o ciclo de vida dos equipamentos.</p>
+							<p>Com objetivo de contornar esse problema, a Virtualização de Funções de Rede (NFV – Network Functions Virtualization) consolida os serviços de telecomunicações de equipamentos proprietários em equipamentos genéricos, que poderiam ser instalados em datacenters ou PoPs (Points of Presence), se preocupando apenas com o desenvolvimento dos serviços por software.</p>
+							<p><strong>O que é NFV (Network Functions Virtualization)?</strong></p>
+                            <p>NFV é a sigla para virtualização de funções de rede. Trata-se de um processo de arquitetura de rede que permite virtualizar nós da rede, como roteadores, firewalls e balanceadores de carga, executados tradicionalmente em hardware proprietário, de modo que eles possam se conectar para criar serviços de comunicação. Assim, transfere funções de rede de um hardware físico para máquinas virtuais.</p>
+							<p>Com a NFV, você não precisa ter um hardware dedicado para cada função de rede. Ela aumenta a escalabilidade e a agilidade porque possibilita que os provedores forneçam novas aplicações e serviços de rede sob demanda, sem exigir recursos de hardware adicionais.</p>
 							</br>
-							<img src="images/kubernetes-conhecendo-orquestracao-containers.webp" class="center">
+							<img src="images/nfv.jpg" class="center">
 							</br>
-							<p align="center"><i>Representação de contêineres em Kubernetes</p>
+							<p align="center"><i>Network Functions Virtualization</p>
 							</br>
-                            <p><strong>Cluster:</strong> Um Cluster é nada mais que um conjunto de máquinas, também chamadas de <strong>nós</strong>, que são utilizadas em conjunto.</p>
-                            <p><strong>Pods:</strong> Um Pod é a menor unidade de trabalho do Kubernetes, pode ser composto por um ou mais contêineres desde que compartilhem o mesmo volume e namespace. Também pode ser reconhecido como uma instância de processo rodando no cluster. Um detalhe importante é que são efêmeros, uma vez que são direcionados para a realização de uma tarefa específica quando criados.</p>
-							</br>
-							<img src="images/module_03_nodes.svg" class="center">
-							</br>
-							<p align="center"><i>Representação de Pods em Kubernetes</p>
-							</br>
-                            <p><strong>Services:</strong> Services, ou serviços, são abstrações que definem um conjunto lógico de Pods e uma política para acessá-los. Diferentes dos Pods, não são efêmeros. Aqui estão alguns tipos de Services:</p>
-                            <ul>
-                                <li>ClusterIP -> Serviço responsável por criar um endereço IP que permite a comunicação entre os Pods, sendo ele acessível apenas dentro de um cluster;</li>
-                                <li>NodePort -> Serviço responsável por mapear os nós, através de portas, dentro de um cluster para acesso de agentes externos; </li>
-                                <li>LoadBalancer -> Serviço responsével por dividir as cargas de processos entre diferentes nós, permitindo que um sistema, site ou aplicação continue em funcionamento mesmo com o aumento da demanda;</li>
-                                <li>ExternalName -> Serviço responsável por mapear nomes DNS do cluster para nomes DNS externos, permitindo que Pods acessem serviços fora do cluster. </li>
-                            </ul>
-							</br>
-							<img src="images/Services-in-Kubernetes3.jpg" class="center">
-							</br>
-							<p align="center"><i>Representação de Serviços em Kubernetes</p>
-							</br>
-						</div>
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -125,34 +84,25 @@
 							<ul class="actions fit small">
 							<li><a href="#vant" class="button special fit small scrolly">Vantagens -></a></li>
 							</ul>
-                            <h3 align="center">Control Plane</br></h3>
-                            <p align="center">Tomam decisões globais sobre o cluster, detectam e respondem aos eventos do cluster.</br></p>
-                            <p><strong>Kube-apiserver:</strong> É o núcleo do Kubernetes. Ele desempenha um papel fundamental ao gerenciar a gravação no banco de dados, garantindo a validação e configuração adequadas dos dados para os objetos da API, como pods, serviços e controladores de replicação. Além disso, ele facilita o balanceamento de carga e tráfego entre as instâncias, fornecendo uma interface centralizada para o cluster que permite a interação entre todos os componentes do sistema.
-                            </p>
-                            <p><strong>Kube-scheduler:</strong> É encarregado de distribuir os pods nos nós para execução. Ele leva em consideração as especificações de afinidade e anti-afinidade, além de analisar fatores como interferências de cargas de trabalho, prazos e outros critérios. Esse processo permite identificar o nó mais adequado para alocar o container, levando em conta a disponibilidade e otimizando os recursos. Suas decisões são baseadas em requisitos individuais e coletivos de recursos, restrições de hardware e software, políticas, afinidades e anti-afinidades, localização de dados, interferências entre cargas de trabalho e prazos.</p>
-                            <p><strong>ETCD:</strong> É o tipo de armazenamento. Responsável pelo armazenamento de dados relacionados ao cluster. É um aramá e ameno do tipo chave valor consistente e de alta disponibilidade, usado como armazenamento de apoio do kubernetes. </p>
-                            <p><strong>Kube-controller-manager:</strong> Executa os processos do controlador. Apesar de cada controlador estar em um processo separado, eles são complicados e executam em um único processo. Controladores: de nó, de jobs, de endpointslice, service account.</p>
-                            <p><strong>Cloud-controller-manager:</strong> Executa os controladores kubernets que estão na nuvem. É possível gerenciar o controle da nuvem, escalonando horizontalmente e garantindo a interação com o cluster. É possível gerenciar os nós. Permite vincular o cluster na API do seu provedor de nuvem e separar os componentes que apenas interagem com seu cluster. Executa apenas controladores que são específicos para seu provedor de nuvem. Controladores: de nó, de rota, de serviço. </p>
-                            <hr/>
-                            <h3 align="center">Node Components</br></h3>
-                            <p align="center">Componentes são executados em todos os nós, mantendo os pods em execução e fornecendo o ambiente de execução do kubernetes. </br></p>
-                            <p><strong>Kubelet:</strong> É um dos componentes cruciais dos nós em um cluster Kubernetes. Ele garante a execução eficiente de todos os containers atribuídos a um pod específico. No entanto, vale ressaltar que o Kubelet não gerencia containers que não foram criados pelo próprio Kubernetes, concentrando-se exclusivamente na gestão e supervisão dos containers que fazem parte da estrutura Kubernetes.</p>
-                            <p><strong>Kube-proxy:</strong> É um proxy de rede que opera em cada nó do cluster Kubernetes. Ele desempenha um papel fundamental na implementação do conceito de serviço dentro do Kubernetes, gerenciando e mantendo regras de rede nos nós. Essas regras permitem que os pods se comuniquem eficientemente com sessões de rede dentro ou fora do cluster. Além disso, o Kube-proxy aproveita a camada de filtragem de pacotes do sistema operacional, se disponível, para otimizar a conectividade de rede e garantir uma comunicação confiável entre os componentes do cluster.</p>
-                            <hr/>
-                            <h3 align="center">Security</br></h3>
-                            <p align="center">Estratégia de segurança adotada pelo Kubernetes</br></p>
-                            <p><strong>Proteção do plano de controle: </strong> Uma prática imprescindível para qualquer cluster Kubernetes é controlar o acesso à API. É esperado que você configure e use TLS para fornecer criptografia de dados em trânsito dentro do plano de controle e entre o plano de controle e seus clientes. Também é possível habilitar a criptografia em repouso para os dados armazenados dentro do plano de controle do Kubernetes. </p>
-                            <p><strong>Secrets: </strong> A API Secret oferece proteção básica para valores de configuração que exigem confidencialidade.</p>
-			    			<p><strong>Proteção de Workloads: </strong> Padrões de segurança de Pods devem ser aplicados para garantir que os Pods e seus containers estejam adequadamente isolados. Classes de Runtime podem ser usadas para definir isolamento personalizado, se necessário. Políticas de rede permitem controlar o tráfego entre Pods ou entre Pods e a rede externa ao cluster.</p>
-			    			<p><strong>Auditoria: </strong>O registro de auditoria do Kubernetes documenta a sequência de ações em um cluster, registrando atividades de usuários, aplicativos que utilizam a API do Kubernetes e do próprio plano de controle. Políticas de segurança podem ser definidas usando mecanismos nativos do Kubernetes, como NetworkPolicy e ValidatingAdmissionPolicy. Além disso, é possível utilizar implementações de políticas do ecossistema mais amplo, que oferecem mecanismos de extensão para controles de revisão de código-fonte, aprovação de imagens de containers, controle de acesso à API e rede, entre outros.</p>
-                            <hr/>
-                            <h3 align="center">Networking</br></h3>
-                            <p align="center">Modelos de comunicação entre unidades do Kubernetes.</br></p>
-                            <p><strong>Container-to-Container:</strong> Comunicação entre contêineres, é necessário que possuam um mesmo namespace - endereço de ambiente isolado dentro de um determinado cluster - e que compartilhem um IP comum.</p>
-                            <p><strong>Pod-to-Pod:</strong> Comunicação entre Pods, o próprio nome já diz. Um detalhe importante é que, como Pods são efêmeros, é alocado um único ClusterIP para estender essa “vida útil”</p>
-                            <p><strong>Pod-to-Service:</strong> Comunicação entre Pod e Serviço. Existe para além do tempo de vida do POD, é gerenciado pelo kube-proxy e também usa um único ClusterIP</p>
-                            <p><strong>External-to-Service:</strong> Comunicação externa ao cluster, é feita através de um LoadBalancer. </p>
-                        </div>
+                            <h3 align="center">VNFs</br></h3>
+							<p align="center">Funções de Rede Virtual</br></p>
+                            <p>São serviços que eram previamente executados em hardware, como por exemplo, roteadores. Esses serviços podem ser interligados no encadeamento de serviços, quando são virtualizados. Esse encadeamento ajuda operadores de rede a automatizar o provisionamento de recursos para cada serviço, gerando uma visão mais centralizada das funções, proporcionando aos operadores um controle aprimorado da rede. </p>
+						 	<p>As VNF's são funções de rede que podem ser definidas por uma ou mais VM. Ou seja, um bloco dentro da NFVI que tem um comportamento funcional bem definido e com saídas bem definidas de modo a virtualizar serviços de rede é uma VNF.</p>
+							<hr/>
+                            <h3 align="center">NFVi</br></h3>
+                            <p align="center">Infraestrutura de Virtualização de Funções de Rede</br></p>
+                            <p>Consiste nos servidores, armazenamento, switches e recursos de computação necessários para criar ambientes NFV. Para abstrair as funções de rede do hardware físico, os operadores de rede criam uma camada de virtualização.</p>
+                            <p>A NFVI é a camada de base para as VNF's. Possui três componentes, os recursos físicos, que são hardwares disponíveis para a virtualização de NF's, como CPU, memória e rede; os recursos virtuais, que definem as VM's (Virtual Machines) como abstrações da sub-camada de recursos físicos; por fim, o hypervisor, que coordena a alocação dos recursos físicos para a implementação das VM's.</p>
+							<hr/>
+                            <h3 align="center">MANO</br></h3>
+                            <p align="center">Orquestração de Rede, Automação e Gerenciamento</br></p>
+                            <p>O gerenciamento de NFV é um conjunto de práticas e tecnologias voltadas para a gestão eficiente de redes, oferecendo um framework para automatizar o provisionamento de VNFs e autenticar os recursos da infraestrutura virtualizada. O Gerenciador de Infraestrutura Virtualizada (VIM) otimiza o ciclo de vida de recursos virtuais e físicos, permitindo o gerenciamento de múltiplos recursos ou focando em áreas específicas. Ele mantém um registro desses recursos, facilitando a manutenção das operações e a implantação de novos serviços. Já o Gerenciador de Funções de Rede Virtualizadas (VNF Manager) padroniza as VNFs, melhorando a interoperabilidade com redes definidas por software (SDN) e gerenciando a criação, escalabilidade, atualização e encerramento dessas funções.</p>
+							<p>Outra função dessa camada é fazer a conexão do ambiente virtual com OSS (Operations Support System) e BSS (Business Support System) para manter equipamentos legado que dão suporte a processos internos da operadora de serviço.</p>
+							<img src="images/diagram-what-is-nfv.jpg" class="center">
+							</br>
+							<p align="center"><i>Diagrama da Arquitetura das NFVs</p>
+							</br>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -172,28 +122,24 @@
 							<li><a href="#apli" class="button special fit small scrolly">Aplicações -></a></li>
 							</ul>
 
-							<h3 align="center">Orquestração</h3>
+							<h3 align="center">Redução de Custos</h3>
 
-							<p>Uma das principais vantagens dos Kubernetes é a capacidade de orquestrar e gerenciar o armazenamento de forma flexível. Os usuários podem definir estratégias de armazenamento tanto localmente quanto em ambientes multi-cloud, permitindo uma abordagem adaptável às necessidades de armazenamento dos aplicativos.</p>
+							<p>A NFV reduz custos ao diminuir a necessidade de hardware, permitindo que várias máquinas virtuais rodem em um único servidor e ocupem menos espaço físico. Além disso, prolonga a vida útil dos equipamentos de rede, garantindo um melhor retorno sobre os investimentos e reduzindo o consumo de energia nos data centers, o que diminui os custos gerais de TI.</p>
                             </br>
 							<hr />
-							<h3 align="center">Otimização dos Recursos</h3>
+							<h3 align="center">Flexibilidade e Escalabilidade</h3>
 							
-							<p>Os Kubernetes possibilitam uma otimização eficiente dos recursos de computação. Os clusters de nós são aproveitados para executar tarefas nos containers de maneira inteligente, atribuindo recursos de memória conforme a demanda, garantindo assim uma utilização mais eficaz e escalável dos recursos disponíveis.</p>
+							<p>A NFV fornece aos provedores a flexibilidade para executar VNFs em diferentes servidores ou transferi-las de acordo com as necessidades quando a demanda mudar. Dessa forma, os provedores aceleram a entrega de serviços e apps.</p>
                             </br>
 							<hr />
-							<h3 align="center">Autocorreção</h3>
-							<p>Uma das funcionalidades poderosas dos Kubernetes é sua capacidade de autocorreção em casos de falhas. Se um container apresentar problemas, a ferramenta automaticamente reinicia o container afetado e, em caso de erros mais graves, substitui o container por uma nova instância funcional, garantindo a continuidade das operações.</p>
+							<h3 align="center">Agilidade na Implementação</h3>
+
+							<p>Como usa hardware dedicado, isso reduz o tempo de provisionamento e configuração, facilitando a adaptação rápida às mudanças de demanda e novos serviços. Com NFV, os provedores podem lançar novos serviços e expandir a infraestrutura de rede de maneira mais eficiente e flexível, acelerando o tempo de entrada no mercado.</p>
 							</br>
 							<hr/>
-							<h3 align="center">Automatização</h3>
+							<h3 align="center">Atualização Dinâmica</h3>
 
-							<p>Os Kubernetes oferecem recursos avançados de automatização. É possível programar a criação automática de containers de acordo com as configurações estabelecidas. Além disso, a plataforma permite a eliminação automática de containers obsoletos e a concentração de recursos em novos containers conforme necessário, simplificando a administração e garantindo uma operação eficiente do ambiente.</p>
-                            </br>
-                            <hr/>
-                            <h3 align="center">Segurança da Informação</h3>
-
-							<p>Os Kubernetes fornecem recursos robustos para garantir a segurança da informação. É possível armazenar e gerenciar informações sigilosas de forma segura, utilizando medidas como senhas, tokens e chaves de criptografia. Isso garante a integridade e a confidencialidade dos dados, mantendo um ambiente seguro para as operações do sistema.</p>
+							<p>A virtualização de funções de rede (NFV) acelera o lançamento de novos serviços, aplicativos e atualizações em uma rede virtualizada.As redes virtuais permitem que operadores automatizem a implementação de funcionalidades e aplicativos por meio da implantação contínua. Após a aprovação em testes pré definidos, as atualizações são disponibilizadas aos usuários.</p>
 						</div>
 
 					</div>	
@@ -216,42 +162,17 @@
 							<li><a href="#des" class="button special fit small scrolly">Desafios e Contrapontos -></a></li>
 							</ul>
 
-							<h3 align="center">Docker vs. Kubernetes</h3>
-                            <p>Embora muitas vezes interpretados como uma escolha entre um ou outro, o Kubernetes e o Docker são tecnologias diferentes, mas complementares para executar aplicativos em contêineres.</p>
-							<p>O Docker permite que você coloque tudo o que você precisa para executar seu aplicativo em uma caixa que pode ser armazenada e aberta quando e onde for necessário. Depois de começar a encaixotar seus aplicativos, você precisa encontrar uma maneira de gerenciá-los; e é isso que o Kubernetes faz. O próprio nome "Kubernetes" é uma palavra grega que significa "capitão", o que condiz com suas funcionalidades, uma vez que, assim como um capitão, que é responsável pela jornada segura do navio nos mares, o Kubernetes é o responsável por transportar e entregar essas caixas com segurança para os locais onde possam ser usadas.</p>
-                            <ul>
-                                <li>O Kubernetes pode ser usado com ou sem o Docker</li>
-                                <li>O Docker não é uma alternativa ao Kubernetes, portanto, não é uma questão de “Kubernetes vs. Docker”. Trata-se de usar o Kubernetes com o Docker para armazenar seus aplicativos em contêineres e executá-los em escala</li>
-                                <li>A diferença entre o Docker e o Kubernetes está relacionada ao papel que cada um desempenha no armazenamento em contêiner e na execução de seus aplicativos</li>
-                                <li>O Docker é um padrão aberto do setor para empacotar e distribuir aplicativos em contêineres</li>
-                                <li>O Kubernetes usa o Docker para implantar, gerenciar e escalonar aplicativos em contêineres</li>
-                            </ul>
-                            </br>
-                            <img src="images/kvsd.jpg" class="center";>
-							</br>
-                            <p align="center"><i>Docker vs. Kubernetes</p>
-							</br>
-							<hr/>
-							<h3 align="center">Kubernetes na Engenharia de Dados</h3>
-							<p>Sabemos que o Kubernetes é um ótimo serviço de gerenciamento de containers. Por isso, essa ferramenta se torna útil em diferentes aplicações. Na Engenharia de Dados, área que trabalha com problemas complexos em que muitas das vezes precisamos ter uma alta escalabilidade e gerenciamento, o Kubernetes se torna uma excelente opção.</p>
-                            <p>Na Engenharia de Dados, temos o Apache Airflow que é uma ferramenta muito útil para orquestração de fluxos de dados. Podemos utilizar o Airflow de uma maneira bastante manual, mas com o Kubernetes facilitamos muitos dos processos utilizando recursos que diminuem grande parte da carga de trabalho. Ao executá-lo dentro de um cluster, é possível utilizar os recursos de escalabilidade que o Kubernetes fornece.</p>
-							<img src="images/ApacheXKub.png" class="center";>
-							</br>
-							<p align="center"><i>Esquema mostrando a combinação do Apache Airflow com Kubernetes.</p>
-							</br>
+							<p><strong>Encadeamento de Serviços:</strong> Os provedores de serviços de comunicação podem encadear e vincular serviços ou aplicativos e oferecê-los como um serviço sob-demanda, como por exemplo, firewall e otimização de rede SD-WAN.</p>
 
-							<hr/>
-							<h3 align="center">CERN - Organização Europeia para a Pesquisa Nuclear </h3>
-							<p>CERN utiliza Kubernetes para gerenciar a infraestrutura necessária para a pesquisa científica, incluindo a análise de grandes volumes de dados dos experimentos no Grande Colisor de Hádrons (LHC). Aqui estão os principais benefícios que Kubernetes proporciona ao CERN:</p>
-							<p><strong>Gerenciamento de Recursos Computacionais:</strong> Kubernetes distribui eficientemente cargas de trabalho computacionais em clusters, maximizando a utilização de recursos e permitindo a análise de grandes volumes de dados.</p>
-							<p><strong>Escalabilidade Flexível:</strong> Kubernetes permite ao CERN escalar recursos rapidamente conforme necessário para suportar picos de demanda durante experimentos intensivos.</p>
-							<p><strong>Infraestrutura Híbrida:</strong> Kubernetes facilita a integração de recursos locais com a nuvem, criando um ambiente híbrido que oferece flexibilidade e otimização de custos.</p>
-                            <p><strong>Automação de Tarefas Operacionais:</strong> Kubernetes automatiza muitas tarefas operacionais, como a implementação, o monitoramento e a manutenção dos aplicativos, liberando os cientistas de TI para se concentrar em tarefas mais críticas.</p>
-                            <p><strong>Isolamento e Segurança:</strong> Kubernetes permite a execução de aplicações em ambientes isolados (namespaces e pods), garantindo que os experimentos científicos sejam realizados de maneira segura e eficiente.</p>
+							<p><strong>Filial Definida por Software e SD-WAN:</strong> As NFVs (Funções de Rede Virtualizadas) podem definir a otimização da rede SD-WAN e a funcionalidade de segurança da SD-Branch, permitindo que essas funções sejam totalmente virtualizadas e oferecidas como um serviço.</p>
 
-							<img src="images/lhc-atlas.webp" class="center";>
-							</br>
-							<p align="center"><i>LHC - Colisor de Partículas do CERN</p>
+							<p><strong>Monitoramento e Segurança de Rede:</strong> Um firewall pode ser implementado utilizando NFV, permitindo o monitoramento dos fluxos de rede e aplicação de políticas de segurança para o tráfego roteado através de firewalls de modo virtualizado.</p>
+
+							<p><strong>Telecomunicações:</strong> A NFV permite que operadoras virtualizem funções de rede como firewalls, roteadores e balanceadores de carga, resultando em maior flexibilidade e eficiência no gerenciamento da infraestrutura de rede.</p>
+
+							<p><strong>Computação em Nuvem:</strong> A NFV se integra a soluções de orquestração como Kubernetes e OpenStack, permitindo a criação de redes dinâmicas que se adaptam rapidamente às mudanças nas demandas de serviço.</p>
+
+							<p><strong>IoT:</strong> A NFV facilita a implementação e gerenciamento de redes que conectam milhões de dispositivos, garantindo a escalabilidade necessária para lidar com grandes volumes de dados.</p>
 
 						</div>
 					</div>
@@ -270,39 +191,74 @@
 							<hr />
 							
 							<ul class="actions fit small">
-							<li><a href="#fut" class="button special fit small scrolly">Futuro do Kubernetes -></a></li>
+							<li><a href="#tec" class="button special fit small scrolly">Tecnologias Relacionadas -></a></li>
 							</ul>
 
-							<h3 align="center">Complexidade</h3>
-							<p><strong>Curva de Aprendizado Íngreme:</strong> Kubernetes é uma tecnologia complexa que pode ser difícil de aprender e dominar. A configuração e o gerenciamento de clusters de Kubernetes requerem um bom entendimento de conceitos avançados de rede, segurança e infraestrutura.</p>
-							<p><strong>Gestão Operacional:</strong> A operação de um cluster de Kubernetes pode ser desafiadora, especialmente em termos de monitoramento, manutenção e troubleshooting. O gerenciamento eficaz de recursos, pods, serviços e nós exige um conhecimento aprofundado e ferramentas de monitoramento robustas.</p>
+							<h3 align="center">Complexidade da Integração</h3>
+							<p>A integração de soluções NFV com a infraestrutura existente pode ser complexa, exigindo tempo e recursos significativos para a adaptação.</p>
 							</br>
 							<hr />
 
-							<h3 align="center">Custo</h3>
-							<p>Kubernetes pode aumentar os custos operacionais devido à necessidade de mais recursos computacionais para executar os componentes de orquestração. Além disso, o gerenciamento e a manutenção de clusters de Kubernetes podem exigir equipes especializadas, o que pode aumentar os custos de mão-de-obra. A complexidade da infraestrutura necessária para Kubernetes pode resultar em custos adicionais, especialmente se for necessário provisionar recursos de nuvem ou hardware adicional para garantir alta disponibilidade e resiliência.</p>
+							<h3 align="center">Interoperabilidade</h3>
+							<p>A necessidade de garantir que diferentes funções de rede virtualizadas (VNFs) de diversos fornecedores funcionem bem em conjunto pode ser desafiadora, especialmente em ambientes heterogêneos.</p>
 							</br>
 							<hr />
 
-							<h3 align="center">Sobrecarga de Recursos</h3>
-							<p><strong>Consumo de Recursos:</strong> Kubernetes pode introduzir uma sobrecarga significativa de recursos, já que cada nó de um cluster precisa rodar vários componentes do sistema (como kubelet, kube-proxy, etc.). Isso pode levar a um consumo adicional de CPU, memória e rede.</p>
-							<p><strong>Eficiência Subótima:</strong> Em ambientes menores ou com cargas de trabalho menos intensivas, a sobrecarga operacional de Kubernetes pode não justificar os benefícios, resultando em eficiência subótima.</p>
+							<h3 align="center">Gerenciamento e Orquestração</h3>
+							<p>A orquestração eficiente de múltiplas VNFs e a gestão da infraestrutura virtualizada exigem ferramentas robustas e uma estratégia clara, o que pode ser desafiador de implementar. Para isso, é evidente a necessidade de abstrações consistentes na elaboração das funções de rede, utilizando protocolos de descoberta de serviços (Service Discovery Protocols - SDPs) e interfaces nas APIs. Essas interfaces, ajudam a abstrair os serviços para os clientes, facilitando a integração e a comunicação entre os diferentes componentes da rede virtualizada.</p>
 							</br>
 							<hr />
 
 							<h3 align="center">Segurança</h3>
-							<p> A segurança em Kubernetes é complexa e requer a configuração correta de políticas de rede, controle de acesso baseado em função (RBAC), e gerenciamento de secrets. Uma configuração incorreta pode expor a infraestrutura a riscos de segurança. A adição de vários componentes e camadas na infraestrutura aumenta a superfície de ataque, exigindo monitoramento e gestão contínuos para manter a segurança.</p>
+							<p>A virtualização pode introduzir novas vulnerabilidades de segurança, exigindo medidas adicionais para proteger as funções de rede e a infraestrutura virtualizada. Assim como a virtualização de servidores, a aplicação de funções de rede sobre um conjunto de switches ou servidores pode resultar em falhas de segurança em sistemas operacionais de rede, nas interfaces entre funções de rede (NFs) e nas cadeias de serviços de VNFs. Em um data center com múltiplos servidores que possuem infraestrutura NFVi, diversos serviços e operações de rede compartilham recursos, tornando essencial garantir o isolamento dos locatários para preservar os contratos de SLA. Além disso, os clientes frequentemente precisam gerenciar os serviços contratados em diferentes níveis de operação. Portanto, a NFV deve oferecer uma exposição segura de suas APIs, garantindo que cada uma funcione de maneira independente, de modo que o gerenciamento de um cliente não interfira nas funções de rede de outro.</p>
                             </br>
                             <hr />
 
-							<h3 align="center">Manutenção</h3>
-							<p><strong>Manutenção Contínua:</strong> Manter Kubernetes atualizado com as últimas versões e patches de segurança é crucial, mas pode ser desafiador e requer planejamento cuidadoso para evitar downtime e problemas de compatibilidade.</p>
-                            <p><strong>Atualizações de Cluster:</strong> Atualizar um cluster de Kubernetes pode ser um processo complicado, especialmente em ambientes de produção, onde a interrupção mínima é crítica.</p>
+							<h3 align="center">Desempenho</h3>
+							<p>A performance das VNFs pode não ser igual à das soluções baseadas em hardware, especialmente em situações de alta demanda, exigindo otimizações e ajustes.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<section id="tec" class="wrapper style2">
+			<div class="inner">
+				<div>
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>Tecnologias Relacionadas</h2>
+							</header>
+							<hr />
+							
+							<ul class="actions fit small">
+							<li><a href="#fut" class="button special fit small scrolly">Tendências para o Futuro das NFVs -></a></li>
+							</ul>
+							
+							<h3 align="center">SDN (Software Defined Networking)</br></h3>
+							<p>A tecnologia SDN possui diversas características em comum com a tecnologia NFV, pois ambas se baseiam no conceito de virtualização de funções de rede. A arquitetura SDN é composta por três camadas principais: Camada de Infraestrutura, Camada de Controle e Camada de Aplicação. Ao contrário das redes tradicionais, o controle e gerenciamento da rede em SDN tornam-se programáveis, uma vez que estão desvinculados das funções de encaminhamento de dados (forwarding functions).</p>
+							<p>SDN e NFV podem ser vistas como tecnologias complementares, oferecendo uma solução integrada para redes. Por exemplo, aplicações de gerenciamento em um controlador SDN, como balanceamento de carga, monitoramento e análise de tráfego, podem ser tratadas como VNFs (Virtual Network Functions), aproveitando a flexibilidade e confiabilidade da tecnologia NFV. Por outro lado, a NFV pode se beneficiar da SDN, acelerando sua implementação ao possibilitar o encadeamento automático de funções, provisionamento e configuração da rede, entre outras vantagens.</p>
+							<p>Apesar das semelhanças, SDN e NFV são conceitos distintos, com objetivos diferentes. Enquanto a NFV busca desvincular as funções de rede dos dispositivos de hardware especializados, o SDN propõe a separação completa entre o controle e o gerenciamento da rede. Além disso, a NFV pode ser implementada em redes existentes, pois funciona em servidores e interage com o tráfego que lhes é direcionado. Já o SDN exige a construção de uma nova rede onde os planos de controle e dados estão separados.</p>
+							<img src="images/nfv-sdn.ppm" class="center">
+							</br>
+							<p align="center">Esquema de complementariedade entre NFV e SDN<i></p>
+							</br>
+							<hr />
+
+							<h3 align="center">Cloud Computing</br></h3>
+							<p>Cloud Computing consiste no compartilhamento de recursos computacionais (redes, servidores, armazenamento, aplicações e serviços) que pode ser rapidamente disponibilizado com o mínimo de esforço operacional ou interação do provedor do serviço. Uma das principais características do modelo de computação em nuvem é a capacidade de permitir acesso de clientes de uma variedade de plataformas (celulares, tablets e laptops) ao recursos computacionais do provedor de serviço. Esses recursos podem ainda ser disponibilizados ou liberados rapidamente, frente à necessidade de se adaptar à uma maior demanda pelos mesmos. Além disso, os sistemas em nuvem conseguem fazer o controle e otimização dos seus recursos automaticamente, medindo a capacidade para cada tipo de serviço.</p>
+							<p>Existe uma correspondência clara entre o modelo IaaS do Cloud Computing e a camada NFVI, relacionada com os recursos físicos e virtuais, bem como entre o modelo de serviço SaaS com a camada VNF do NFV. Dessa forma, o NFV pode se beneficiar de um serviço de virtualização já existente, com grande capacidade de armazenamento e processamento, cuja rapidez de disponiblidade de recursos, controle e otimização automáticos dos mesmos, são de grande valor para a virtualização de funções de rede.</p>
+							<p>Os primeiros testes do NFV foram realizados e implementados em máquinas virtuais na nuvem, se beneficiando da flexibilidade da Cloud e do baixo custo. Entretanto, a aplicação em larga escala de funções de rede na nuvem apresenta um grande desafio, já que as redes de telecomunicações podem requisitar uma alta performance da nuvem, além de confiabilidade e disponibilidade dos serviços. Algo que, atualmente, é provido pela infraestrutura das empresas de telecomunicações.</p>
+							<img src="images/cloud-computing.png" class="center">
+							</br>
+							<p align="center">Cloud Computing<i></p>
+							</br>						
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		
 
 		<section id="fut" class="wrapper style2">
 			<div class="inner">
@@ -310,22 +266,18 @@
 					<div class="box">
 						<div class="content">
 							<header class="align-center">
-								<h2>Futuro do Kubernetes</h2>
+								<h2>Tendências para o Futuro das NFVs</h2>
 							</header>
 							<hr />
 																
 							<ul class="actions fit small">
 							<li><a href="#concl" class="button special fit small scrolly">Conclusão -></a></li>
 							</ul>
-                            <p align="center">"O futuro do Kubernetes parece promissor, com várias tendências emergentes".</br></p>
-                            <p><strong>Edge Computing:</strong> Kubernetes está sendo adaptado para rodar em dispositivos de borda, permitindo a orquestração de contêineres em locais remotos e em dispositivos IoT.
-                            </p>
-                            <p><strong>IA e Machine Learning:</strong> A integração de Kubernetes com frameworks de IA e ML está facilitando o treinamento e a implantação de modelos de aprendizado de máquina.</p>
-                            <p><strong>Inovações em Segurança:</strong> Com o passar do tempo, continuarão a surgir novas práticas e ferramentas para melhorar a segurança dos clusters Kubernetes. </p>
+                            <p>O futuro das NFVs (Virtualização de Funções de Rede) é promissor, especialmente com a sua evolução contínua e o impacto significativo da rede 5G. A evolução do NFV se concentra em aprimorar a orquestração e a automação, permitindo um gerenciamento mais eficiente e escalável das funções de rede virtualizadas. Isso inclui o desenvolvimento de ferramentas que integram inteligência artificial e machine learning, otimizando o desempenho e a segurança. Por outro lado, a implementação do 5G traz novas oportunidades para as NFVs, permitindo uma maior densidade de dispositivos e a demanda por serviços mais rápidos e confiáveis. Com a latência reduzida e a capacidade de conectar um número elevado de dispositivos simultaneamente, o 5G exige que as redes se tornem mais flexíveis e dinâmicas, impulsionando ainda mais a adoção e inovação em NFVs para atender a essas novas exigências do mercado.</p>
 							</br>
-							<img src="images/futuro.png" class="center">
+							<img src="images/nfv-market.jpg" class="center">
 							</br>
-							<p align="center"><i>Cloud Computing em dispositivos de borda.</p>
+							<p align="center"><i>A escolha crescente por NFVs</p>
 							</br>
 						</div>
 					</div>
@@ -348,8 +300,7 @@
 							<li><a href="#ref" class="button special fit small scrolly">Referências -></a></li>
 							</ul>
 
-                            <p>Em resumo, Kubernetes é uma ferramenta poderosa para orquestração de contêineres que oferece uma série de benefícios, como escalabilidade, automação, segurança e eficiência operacional. No entanto, sua complexidade e custo podem representar desafios significativos para as organizações que desejam adotar a tecnologia. É importante avaliar cuidadosamente os requisitos e considerar os prós e contras antes de implementar Kubernetes em um ambiente de produção.</p>
-                            <p>Em última análise, Kubernetes é uma ferramenta valiosa para gerenciar e escalar aplicativos em contêineres, mas requer um investimento significativo em termos de tempo, recursos e expertise para garantir uma implementação bem-sucedida. Com o planejamento adequado e a compreensão dos desafios envolvidos, as organizações podem aproveitar ao máximo os benefícios do Kubernetes e transformar sua infraestrutura de TI para atender às demandas de um mundo cada vez mais digital e orientado por dados.</p>
+							<p>O uso da tecnologia de virtualização é uma excelente saída para a diminuição da dependência de equipamento dedicado a cada aplicação, hardwares especializados em funções limitadas com pouca integração entre si. Um hardware genérico pode realizar diversas dessas funções, e as mesmas podem ser modificadas de maneira rápida, a partir da automação dos procedimentos operacionais de manutenção. Dimensionando os requisitos de conexão de acordo com a demanda, é possível fornecer o conteúdo de maneira resiliente, mas isto depende da qualidade do hardware que receberá as funções virtualizadas. A aplicação das técnicas fica limitada a manusear os custos de produção dos recursos de hardware e suas funções</p>
 						</div>
 					</div>
 				</div>
@@ -372,12 +323,12 @@
 							<li><a href="#perg" class="button special fit small scrolly">Perguntas -></a></li>
 							</ul>
 
-							<p><b>[1] <a href="https://cloud.google.com/kubernetes-engine?utm_source=google&utm_medium=cpc&utm_campaign=latam-BR-all-pt-dr-BKWS-all-all-trial-e-dr-1707800-LUAC0016140&utm_content=text-ad-none-any-DEV_c-CRE_542427311450-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt_Containers-Kubernetes-KWID_43700071228559692-kwd-335784956140&utm_term=KW_kubernetes+google-ST_kubernetes+google&gad_source=1&gclid=CjwKCAjw26KxBhBDEiwAu6KXt-yVRlJnSs9QA9RYLcJs2ECdGTuD-79X_iaMzByim81cbPpsgRkckxoCrtAQAvD_BwE&gclsrc=aw.ds">Google Cloud </a></b></p>
+							<!-- <p><b>[1] <a href="https://cloud.google.com/kubernetes-engine?utm_source=google&utm_medium=cpc&utm_campaign=latam-BR-all-pt-dr-BKWS-all-all-trial-e-dr-1707800-LUAC0016140&utm_content=text-ad-none-any-DEV_c-CRE_542427311450-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt_Containers-Kubernetes-KWID_43700071228559692-kwd-335784956140&utm_term=KW_kubernetes+google-ST_kubernetes+google&gad_source=1&gclid=CjwKCAjw26KxBhBDEiwAu6KXt-yVRlJnSs9QA9RYLcJs2ECdGTuD-79X_iaMzByim81cbPpsgRkckxoCrtAQAvD_BwE&gclsrc=aw.ds">Google Cloud </a></b></p>
                             <p><b>[2] <a href="http://ww25.kubernets.io/?subid1=20240507-0323-15d8-9d82-69ef5b495ac6">Kubernetes </a></b></p>
                             <p><b>[3] <a href="https://rockcontent.com/br/blog/kubernetes/">rockcontent </a></b></p>
                             <p><b>[4] <a href="https://www.redhat.com/pt-br/topics/containers/what-is-kubernetes">redhat </a></b></p>
                             <p><b>[5] <a href="https://www.ibm.com/topics/kubernetes">IBM </a></b></p>
-                            <p><b>[6] <a href="https://www.alura.com.br/artigos/kubernetes-conhecendo-orquestracao-containers">Alura </a></b></p>
+                            <p><b>[6] <a href="https://www.alura.com.br/artigos/kubernetes-conhecendo-orquestracao-containers">Alura </a></b></p> -->
 
 						</div>
 					</div>
@@ -401,56 +352,56 @@
 
 							<hr />
 
-							<p><b> 1) O que é Kubernetes e qual é o seu propósito principal?</b></p>
+							<p><b> 1) </b></p>
 
 
 							
 
 							<div id="myDIV1" style="display: none">
-							<p><i>Kubernetes é uma plataforma de código aberto desenvolvida pelo Google para automatizar a implantação, o dimensionamento e o gerenciamento de aplicativos contidos em contêineres. Seu propósito principal é simplificar e automatizar o processo de implantação, escalonamento e operação de aplicativos em contêineres, permitindo que os desenvolvedores se concentrem mais no desenvolvimento de aplicativos e menos na infraestrutura subjacente.</i></p>
+							<p><i></i></p>
 							</div>
 
 							<hr />
 
-							<p><b> 2) O que é um serviço no contexto do Kubernetes e por que é necessário?</b></p>
+							<p><b> 2) </b></p>
 
 							
 							<div id="myDIV2" style="display: none">
-							<p><i>Um serviço no contexto do Kubernetes é uma abstração que define um conjunto lógico de pods e uma política de acesso a eles. Ele permite que as aplicações se comuniquem entre si de forma confiável, independentemente da sua localização dentro do cluster.</i></p>
+							<p><i></i></p>
 							</div>
 							<hr />
 
-							<p><b> 3) Como o Kubernetes lida com o balanceamento de carga?</b></p>
+							<p><b> 3) </b></p>
 
 
 							
 
 							<div id="myDIV3" style="display: none">
-							<p><i>O Kubernetes lida com o balanceamento de carga distribuindo automaticamente o tráfego de rede entre os pods que fazem parte de um serviço. Isso é feito usando serviços e ingressos para rotear o tráfego para os pods corretos com base em regras de balanceamento de carga configuradas.</i></p>
+							<p><i></i></p>
 							</div>
 
 							<hr />
 
 
-							<p><b> 4) Quais são as diferenças entre Kubernetes e Docker?</b></p>
+							<p><b> 4) </b></p>
 
 
 							
 
 							<div id="myDIV4" style="display: none">
-							<p><i>Kubernetes e Docker são tecnologias complementares. Docker é uma plataforma para desenvolvimento, envio e execução de aplicativos em contêineres, enquanto Kubernetes é uma plataforma de orquestração de contêineres que automatiza o dimensionamento, o gerenciamento e a implantação de aplicativos contidos em contêineres.</i></p>
+							<p><i></i></p>
 							</div>
 
 							<hr />
 
 
-							<p><b> 5) Como o Kubernetes ajuda na escalabilidade das aplicações?</b></p>
+							<p><b> 5) </b></p>
 
 
 							
 
 							<div id="myDIV5" style="display: none">
-							<p><i>O Kubernetes ajuda na escalabilidade das aplicações fornecendo recursos para dimensionar horizontalmente os pods em resposta ao aumento ou diminuição da carga de trabalho. Isso é feito automaticamente com base em métricas de uso, como CPU ou memória.</i></p>
+							<p><i></i></p>
 							</div></br></br>
 
 							<ul class="actions fit small">
