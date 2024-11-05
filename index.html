@@ -92,11 +92,11 @@
                             <h3 align="center">NFVi</br></h3>
                             <p align="center">Infraestrutura de Virtualização de Funções de Rede</br></p>
                             <p>Consiste nos servidores, armazenamento, switches e recursos de computação necessários para criar ambientes NFV. Para abstrair as funções de rede do hardware físico, os operadores de rede criam uma camada de virtualização.</p>
-                            <p>A NFVI é a camada de base para as VNF's. Possui três componentes, os recursos físicos, que são hardwares disponíveis para a virtualização de NF's, como CPU, memória e rede; os recursos virtuais, que definem as VM's (Virtual Machines) como abstrações da sub-camada de recursos físicos; por fim, o hypervisor, que coordena a alocação dos recursos físicos para a implementação das VM's.</p>
+                            <p>A NFVI é a camada de base para as VNF's. Ela possui três componentes, os recursos físicos, que são hardwares disponíveis para a virtualização de NF's, como CPU, memória e rede; os recursos virtuais, que definem as VM's (Virtual Machines) como abstrações da sub-camada de recursos físicos; por fim, o hypervisor, que coordena a alocação dos recursos físicos para a implementação das VM's.</p>
 							<hr/>
                             <h3 align="center">MANO</br></h3>
                             <p align="center">Orquestração de Rede, Automação e Gerenciamento</br></p>
-                            <p>O gerenciamento de NFV é um conjunto de práticas e tecnologias voltadas para a gestão eficiente de redes, oferecendo um framework para automatizar o provisionamento de VNFs e autenticar os recursos da infraestrutura virtualizada. O Gerenciador de Infraestrutura Virtualizada (VIM) otimiza o ciclo de vida de recursos virtuais e físicos, permitindo o gerenciamento de múltiplos recursos ou focando em áreas específicas. Ele mantém um registro desses recursos, facilitando a manutenção das operações e a implantação de novos serviços. Já o Gerenciador de Funções de Rede Virtualizadas (VNF Manager) padroniza as VNFs, melhorando a interoperabilidade com redes definidas por software (SDN) e gerenciando a criação, escalabilidade, atualização e encerramento dessas funções.</p>
+                            <p>MANO (Management and Orchestration) é uma parte essencial no gerenciamento e orquestramento de VNFs. Ele consiste de 3 componentes principais: NFVO (Network Functions Virtualization Orchestrator), que orquestra recursos de rede e gerencia o ciclo de vida dos serviços de rede; VNFM (Virtual Network Function Manager), responsável pelo ciclo de vida individual das VNFs e pela realização de operações sobre elas, além de se comunicar com o VIM para garantir a disponibilidade dos recursos necessários; e VIM (Virtualized Infrastructure Manager), que gerencia recursos de infraestrutura virtualizada, como computação, armazenamento e rede, interagindo diretamente com o hardware subjacente e tecnologias de virtualização para alocar e liberar recursos conforme necessário pelas VNFs. Juntos, esses componentes automatizam processos, melhoram a eficiência, permitem escalabilidade dinâmica e flexibilizam a implantação de serviços de rede.</p>
 							<p>Outra função dessa camada é fazer a conexão do ambiente virtual com OSS (Operations Support System) e BSS (Business Support System) para manter equipamentos legado que dão suporte a processos internos da operadora de serviço.</p>
 							<img src="images/diagram-what-is-nfv.jpg" class="center">
 							</br>
@@ -124,12 +124,12 @@
 
 							<h3 align="center">Redução de Custos</h3>
 
-							<p>A NFV reduz custos ao diminuir a necessidade de hardware, permitindo que várias máquinas virtuais rodem em um único servidor e ocupem menos espaço físico. Além disso, prolonga a vida útil dos equipamentos de rede, garantindo um melhor retorno sobre os investimentos e reduzindo o consumo de energia nos data centers, o que diminui os custos gerais de TI.</p>
+							<p>As VNFs (Virtual Network Functions) reduzem custos ao substituir hardware especializado por servidores padrão, diminuindo investimentos em equipamentos caros. Por exemplo, em vez de comprar roteadores físicos para cada local, uma operadora pode usar VNFs para executar funções de roteamento em servidores virtuais, economizando dinheiro em hardware e manutenção.</p>
                             </br>
 							<hr />
 							<h3 align="center">Flexibilidade e Escalabilidade</h3>
 							
-							<p>A NFV fornece aos provedores a flexibilidade para executar VNFs em diferentes servidores ou transferi-las de acordo com as necessidades quando a demanda mudar. Dessa forma, os provedores aceleram a entrega de serviços e apps.</p>
+							<p>Flexibilidade e escalabilidade são garantidas pelas VNFs ao virtualizarem funções de rede tradicionalmente baseadas em hardware. Isso permite que o ajuste rápido dos recursos seja realizado conforme a demanda, com a capacidade de rede sendo escalada sem a necessidade de novos equipamentos físicos, resultando em maior eficiência e agilidade na adaptação às necessidades dos usuários.</p>
                             </br>
 							<hr />
 							<h3 align="center">Agilidade na Implementação</h3>
@@ -388,7 +388,6 @@
 									  Isso reduz o tempo necessário para oferecer novas funcionalidades aos usuários e facilita a adaptação a novas demandas de mercado.</h4></i></p>
 							</div>
 							<hr />
-
 
 							<p><b><h2>5) Como a NFV ajuda a reduzir custos nas empresas que utilizam redes?</h2></b></p>
 
