@@ -56,7 +56,7 @@
 							<li><a href="#arq" class="button special fit small scrolly">Arquitetura -></a></li>
 							</ul>
 							<p>Uma das grandes dificuldades das operadoras de telecomunicações tem sido sua dependência de hardware proprietário para o provisionamento de serviços. O custo destes dispositivos, a logística necessária para sua instalação, espaço, energia e pessoal especializado para o desenvolvimento, integração e operação desses equipamentos, tornam o lançamento de um novo serviço algo extremamente complicado por parte das operadoras, limitando sua capacidade de acompanhar o avanço da tecnologia, que encurta significativamente o ciclo de vida dos equipamentos.</p>
-							<p>Primeiramente apresentada no SDN and OpenFlow World Congress em Darmstadt, Alemanha, a Virtualização de Funções de Rede (NFV - Network Functions Virtualization) consolida os serviços de telecomunicações de equipamentos proprietários em equipamentos genéricos, que poderiam ser instalados em datacenters ou PoPs (Points of Presence), se preocupando apenas com o desenvolvimento dos serviços por software.</p>
+							<p>Com objetivo de contornar esse problema, a Virtualização de Funções de Rede (NFV – Network Functions Virtualization) consolida os serviços de telecomunicações de equipamentos proprietários em equipamentos genéricos, que poderiam ser instalados em datacenters ou PoPs (Points of Presence), se preocupando apenas com o desenvolvimento dos serviços por software.</p>
 							<p><strong>O que é NFV (Network Functions Virtualization)?</strong></p>
                             <p>NFV é a sigla para virtualização de funções de rede. Trata-se de um processo de arquitetura de rede que permite virtualizar nós da rede, como roteadores, firewalls e balanceadores de carga, executados tradicionalmente em hardware proprietário, de modo que eles possam se conectar para criar serviços de comunicação. Assim, transfere funções de rede de um hardware físico para máquinas virtuais.</p>
 							<p>Com a NFV, você não precisa ter um hardware dedicado para cada função de rede. Ela aumenta a escalabilidade e a agilidade porque possibilita que os provedores forneçam novas aplicações e serviços de rede sob demanda, sem exigir recursos de hardware adicionais.</p>
@@ -87,12 +87,12 @@
                             <h3 align="center">VNFs</br></h3>
 							<p align="center">Funções de Rede Virtual</br></p>
                             <p>São serviços que eram previamente executados em hardware, como por exemplo, roteadores. Esses serviços podem ser interligados no encadeamento de serviços, quando são virtualizados. Esse encadeamento ajuda operadores de rede a automatizar o provisionamento de recursos para cada serviço, gerando uma visão mais centralizada das funções, proporcionando aos operadores um controle aprimorado da rede. </p>
-						 	<p>As VNF's são funções de rede que podem ser definidas por uma ou mais VM. Ou seja, um bloco dentro da NFVI que tem um comportamento funcional bem definido e com saídas bem definidas de modo a virtualizar serviços de rede é uma VNF.</p>
+						 	<p>As VNFs são funções de rede que podem ser definidas por uma ou mais VM. Ou seja, um bloco dentro da NFVI que tem um comportamento funcional bem definido e com saídas bem definidas de modo a virtualizar serviços de rede é uma VNF.</p>
 							<hr/>
                             <h3 align="center">NFVi</br></h3>
                             <p align="center">Infraestrutura de Virtualização de Funções de Rede</br></p>
                             <p>Consiste nos servidores, armazenamento, switches e recursos de computação necessários para criar ambientes NFV. Para abstrair as funções de rede do hardware físico, os operadores de rede criam uma camada de virtualização.</p>
-                            <p>A NFVI é a camada de base para as VNF's. Ela possui três componentes, os recursos físicos, que são hardwares disponíveis para a virtualização de NF's, como CPU, memória e rede; os recursos virtuais, que definem as VM's (Virtual Machines) como abstrações da sub-camada de recursos físicos; por fim, o hypervisor, que coordena a alocação dos recursos físicos para a implementação das VM's.</p>
+                            <p>A NFVI é a camada de base para as VNFs. Ela possui três componentes, os recursos físicos, que são hardwares disponíveis para a virtualização de NFs, como CPU, memória e rede; os recursos virtuais, que definem as VMs (Virtual Machines) como abstrações da sub-camada de recursos físicos; por fim, o hypervisor, que coordena a alocação dos recursos físicos para a implementação das VMs.</p>
 							<hr/>
                             <h3 align="center">MANO</br></h3>
                             <p align="center">Orquestração de Rede, Automação e Gerenciamento</br></p>
@@ -216,6 +216,11 @@
 
 							<h3 align="center">Desempenho</h3>
 							<p>A performance das VNFs pode não ser igual à das soluções baseadas em hardware, especialmente em situações de alta demanda, exigindo otimizações e ajustes.</p>
+							</br>
+							<hr />
+
+							<h3 align="center">Automação</h3>
+							<p>A escalabilidade da NFV é totalmente dependente de sua automação. Sem ela, a NFV apresentará os mesmos problemas já existentes para escalar as infraestrutuas físicas, perdendo assim um dos seus principais benefícios.</p>
 						</div>
 					</div>
 				</div>
